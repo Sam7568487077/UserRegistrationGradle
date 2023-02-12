@@ -4,8 +4,25 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 public class UserRegForm {
     Scanner sc = new Scanner(System.in);
+
+
+    boolean firstName(String firstName) {
+        Pattern p = Pattern.compile("[A-Z][a-z]*");
+        Matcher m = p.matcher(firstName);
+        if (m.find()) {
+            System.out.println("Valid Name");
+            return true;
+        } else {
+            System.out.println("Invalid Name");
+            return false;
+        }
+        //return m.matches();
+    }
+
 
     boolean lastName(String lastName) {
         Pattern p = Pattern.compile("[A-Z][a-z]*");
